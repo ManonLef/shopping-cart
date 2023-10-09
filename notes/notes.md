@@ -19,7 +19,7 @@ Here is where I will keep a log of this project's progress.
 ## Notes on Assignment before starting the project:
 
 1. ✅ [completed](#2023-10-09) 
-2. I am thinking about the following components
+2. Before starting this, I believe it would make sense to keep the header and footer in place throughout, and the main section should change based on current link. I am thinking about the following components:
     - main app
     - header which includes a shopping cart icon, link to homepage and link to shop 
     - data fetcher
@@ -30,8 +30,6 @@ Here is where I will keep a log of this project's progress.
       - should have an input field for number of items, and buttons to increase/decrease
     - home page
     - footer
-    
-    Before starting this, I believe it would make sense to keep the header and footer in place throughout, and the main section should change based on current link. 
 3. covered in the above. 
 4. Homepage could be a fancy introduction to the shop I will pick. It would be nice to include a few hot selling items perhaps, or a call to action like "shop now". I probably want to gather some inspiration for this on real shopping sites. 
 5. covered in point 2. This makes me think the shopping cart should indeed have it's own page to make most sense. You could probably technically have a state and conditionally render it from the shop, but I'd rather keep those separate and have every item, be added to cart on add-to-cart action
