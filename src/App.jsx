@@ -1,5 +1,11 @@
+import { Header} from "./Header";
+
 function App() {
-  return <div>hi new app</div>;
+  return (
+    <div className="w-screen">
+      <Header />
+    </div>
+    )
 }
 
 export default App;
