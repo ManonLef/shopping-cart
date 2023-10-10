@@ -3,10 +3,11 @@ import HomePage from "./Homepage";
 
 function App() {
   return (
-    <>
-      <Header className="w-screen" />
+    <div className="flex flex-col h-screen">
+      <Header  />
       <HomePage />
-    </>
+      <Header />
+    </div>
   );
 }
 

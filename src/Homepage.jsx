@@ -1,3 +1,3 @@
 export default function HomePage() {
-  return <div>homepage content</div>
+  return <div className="flex-1">Homepage content</div>;
 }

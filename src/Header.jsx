@@ -3,7 +3,7 @@ import { NavLinks } from "./NavLinks";
 const Header = () => {
   console.log("rendering NavBar");
   return (
-    <header className="flex justify-between p-5 bg-slate-400">
+    <header className="flex flex-wrap justify-between p-5 h-16 bg-slate-400">
       <NavLinks />
       <div className="flex gap-2">
         <a href="http://" target="_blank" rel="noopener noreferrer">
