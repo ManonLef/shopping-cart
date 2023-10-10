@@ -1,11 +1,13 @@
-import { Header} from "./Header";
+import { Header } from "./Header";
+import HomePage from "./Homepage";
 
 function App() {
   return (
-    <div className="w-screen">
-      <Header />
-    </div>
-    )
+    <>
+      <Header className="w-screen" />
+      <HomePage />
+    </>
+  );
 }
 
 export default App;
