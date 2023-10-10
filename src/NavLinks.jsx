@@ -1,16 +1,14 @@
+import { Link } from "react-router-dom";
+
 const NavLinks = () => {
   return (
     <nav>
       <ul className="flex gap-5">
         <li>
-          <a href="" target="_blank" rel="noopener noreferrer">
-            placeholder link one
-          </a>
+          <Link to={`/shop`}>Shop</Link>
         </li>
         <li>
-          <a href="" target="_blank" rel="noopener noreferrer">
-            placeholder link two
-          </a>
+          <Link to={`/home`}>Home</Link>
         </li>
       </ul>
     </nav>
