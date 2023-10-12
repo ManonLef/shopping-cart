@@ -44,3 +44,39 @@ Here is where I will keep a log of this project's progress.
 - set up my React project with Vite. 
 - [ ] find and keep track of available API's I could use for this project
 - [ ] go through the `React Testing Library` docs and review testing section as needed
+
+## 2023-10-12
+- I started sketching out the basic idea but most of the base components are layed out already. 
+- Need to have a plan for the hierarchy regarding shopping cart, items in cart, nav bar. Since the shopping cart amount of items need to be displayed inside the navbar.
+- the cart amount of items could possibly be a child of cart, with cart being lower in hierarchy/child of nav bar. That way the state is lifted up to where it's required. 
+- Do:
+  - [x] create product components to display on the shop page
+- Now I want to add a button to product, which adds to cart. This means the cart state has to be adjusted which is outside this component so has to be higher up the tree?
+  - I probably need to add all properties to the product itself since it has to be editable later as well, like removing items (from cart). This means default in cart is 0.
+  - This might just be the answer since then all we have to share and edit are the product key/values
+    - concern: would have to filter through all available products to display cart. So this is probably not an option. As soon as user clicks add to cart, it should add the product to a cart array probably if it has a value > 0
+- I'll work on gathering the data through the API first
+- [Mock shop](https://mock.shop/) which has a nice [Demo](https://demostore.mock.shop/)
+- I decided to add the API fetch to the `App` component since that way it only fires once on initial load.  
+
+- [ ] Testing: create mock for API data
+
+### Pseudo API data
+- [x] get products from [data fetch](https://mock.shop/api?query={products(first:%2020){edges%20{node%20{id%20title%20description%20featuredImage%20{id%20url}%20variants(first:%203){edges%20{node%20{price%20{amount%20currencyCode}}}}}}}})
+- [x] assign data I want to product properties
+  - what do I want exactly from each `node`?
+    - [x] title => `node.title`
+    - [x] description => `node.description`
+    - [x] image => `node.featuredImage.url`
+    - [x] price => `node.variants.edges[0].node. price.amount` (no currency)
+    - [x] id/key => `node.id`
+- [x] add product with required data to Products list
+- [x] do this for all products before passing them to the element that needs it. 
+
+## 2023-10-12 End of day notes
+- I struggled a bit with the data fetching since I didn't want to fetch on each shop link click. I ended up adding the fetch to the router for now... Not sure if that's the best way, but it will not remount, so also not refetch, and I can pass the resulting data as props to the children that need it. I will look at it more tomorrow. 
+- I also managed to get the data from the API to render my products. I will call it a day for now.
+
+## Ideas for future
+- store API data fetch in localStorage and only useEffect (if possible) based on data available in LS
+  -(this is probably not needed now but might be good for future to limit API calls?)
