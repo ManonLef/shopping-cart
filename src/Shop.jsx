@@ -1,19 +1,27 @@
 import { useState } from "react";
 import Product from "./Product";
 
-export default function Shop() {
-  console.log("shop.jsx rendering");
-  // dummy products to display
-  const [products, setProducts] = useState([
-    { name: "prod1", price: "$5", key: 1 },
-    { name: "prod2", price: "$10", key: 2 },
-  ]);
+export default function Shop({ data, error, loading }) {
+  console.log("rendering shop");
+  const [products, setProducts] = useState(data);
+  if (loading) return <div>Loading</div>;
+  if (error) return <div>error {error}</div>;
+  // const productsToEdit = data; // do actual product stuff here?
+  console.log("shop", products);
 
   return (
     <div className="flex-1 p-5">
-      <div className="flex gap-3">
+      <div className="flex gap-3 flex-wrap justify-center m-10">
         {products.map((item) => {
-          return <Product key={item.key} name={item.name} price={item.price} />;
+          return (
+            <Product
+              key={item.node.id}
+              title={item.node.title}
+              description={item.node.description}
+              image={item.node.featuredImage.url}
+              price={item.node.variants.edges[0].node.price.amount}   
+            />
+          );
         })}
       </div>
     </div>
