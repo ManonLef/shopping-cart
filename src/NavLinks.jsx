@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 const NavLinks = () => {
+  console.log("rendering NavLinks")
   return (
     <nav>
       <ul className="flex gap-5">
