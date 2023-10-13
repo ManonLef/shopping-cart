@@ -77,6 +77,17 @@ Here is where I will keep a log of this project's progress.
 - I struggled a bit with the data fetching since I didn't want to fetch on each shop link click. I ended up adding the fetch to the router for now... Not sure if that's the best way, but it will not remount, so also not refetch, and I can pass the resulting data as props to the children that need it. I will look at it more tomorrow. 
 - I also managed to get the data from the API to render my products. I will call it a day for now.
 
+## 2023-10-13
+- I will start with creating the footer
+- [ ] add image div to header for shop logo
+- create footer component
+- [ ] add highlights to homepage
+  - create helper to pick 3 random items from API data
+- [x] create footer element
+  - don't add data yet. Might wish to draw some inspiration from other websites
+- BUG refresh doesn't work on `/shop`, array is empty without routing apparently, nor does it with back button in browser
+- [ ] rethink fetch data
+
 ## Ideas for future
 - store API data fetch in localStorage and only useEffect (if possible) based on data available in LS
   -(this is probably not needed now but might be good for future to limit API calls?)
