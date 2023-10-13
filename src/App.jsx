@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 import { Header } from "./Header";
 import { Outlet } from "react-router-dom";
 
@@ -7,7 +8,7 @@ function App() {
     <div className="flex flex-col h-screen">
       <Header />
       <Outlet />
-      <Header />
+      <Footer />
     </div>
   );
 }
