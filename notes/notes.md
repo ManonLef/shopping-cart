@@ -88,7 +88,7 @@ Here is where I will keep a log of this project's progress.
 - BUG refresh doesn't work on `/shop`, array is empty without routing apparently, nor does it with back button in browser
 - [ ] rethink fetch data
 
-## 2023-10-14
+## 2023-10-14 morning
 - Struggling a bit with the hierarchy of states/data. It seems I should pass the variables and needed data at router level perhaps if I am to stay away from context or redux tools for example. It doesn't make full sense  to me to add this data to the router component, so I'll check to see if there's a better place for it. However, testing this with some prop drilling does seem to do the trick with regards to updating both the header cart items (App > Header) and the rendered route to shop as well (I passed the setter here as well with a test function)
 - [ ] rewrite to account for lifted state fetching. 
 - I did run into a bunch of problems earlier with fetching the data and storing said data into its own object. Might still want to attempt this however since I don't think we should be fetching data each time. Unless the data array is empty perhaps 🤔
@@ -96,6 +96,13 @@ Here is where I will keep a log of this project's progress.
 
 ## 2023-10-14 evening update
 - after thinking about this throughout the day I dove into some more research and conversation about this because my research seemed to conclude I wasn't stuck without reason and this should usually be handled using `context` or a tool like `redux`. I considered diving into `context` and that was confirmed [in this react-router discussion](https://github.com/remix-run/react-router/discussions/10440) I got linked to by my peers. So that's what I'll do first. Then when it's time for the rewrite, I need to take a deep breath and NOT forget about implementing tests first... I somehow entirely forgot to approach this project TDD. 
+
+## 2023-10-15 
+- read up about `context`which I could implement or I could go with router not having its own component. I will try to implement `context` since that seems to be what you'd use (or alternative outside tools) when working with more complex projects.
+- data to have available:
+  - products
+  - shopping cart
+  - method to update shopping cart
 
 ## Ideas for future
 - store API data fetch in localStorage and only useEffect (if possible) based on data available in LS
